@@ -1,6 +1,20 @@
-<script setup></script>
+<script setup>
+import { defineEmits } from 'vue';
+
+const emit = defineEmits(['click-start, click-end']);
+
+const startClick = () => {
+    emit('click-start');
+};
+const endClick = () => {
+    emit('click-end');
+};
+</script>
 <template>
-    <div class="dice-container">
+    <div
+        class="dice-container"
+        @mousedown="startClick"
+        @mouseup="endClick">
         <img
             src="/images/icon-dice.svg"
             alt="Get a random quote" />

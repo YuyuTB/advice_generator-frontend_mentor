@@ -1,8 +1,16 @@
 <script setup>
 import { ref, onMounted, onBeforeMount } from 'vue';
 import DiceButton from '../components/DiceButton.vue';
+import ApiFetch from '../components/ApiFetch.vue';
 
 const dividerSrc = ref('');
+const diceClick = ref(false);
+const clickStart = () => {
+    diceClick.value = true;
+};
+const clickEnd = () => {
+    diceClick.value = false;
+};
 
 const updateScreenSize = () => {
     const screenWidth = window.innerWidth;
@@ -23,15 +31,13 @@ onBeforeMount(() => {
 <template>
     <div class="invisible-div">
         <section class="advice-container">
-            <h1>h1</h1>
-            <p>
-                Lorem ipsum dolor, sit amet consectetur adipisicing elit.
-                Laudantium perferendis quia
-            </p>
+            <ApiFetch :clicked="diceClick" />
             <img
                 :src="dividerSrc"
                 alt="divider" />
-            <DiceButton />
+            <DiceButton
+                @clickStart="clickStart"
+                @clickEnd="clickEnd" />
         </section>
     </div>
 </template>
@@ -52,16 +58,9 @@ onBeforeMount(() => {
     border-radius: 10px;
     padding: 20px 10px 10px 10px;
     margin: 10px;
+    min-width: 450px;
 }
-h1 {
-    color: hsl(150, 100%, 66%);
-    font-size: 1rem;
-}
-p {
-    color: hsl(193, 38%, 86%);
-    font-size: 28px;
-    text-align: center;
-}
+
 @media screen and (min-width: 1440px) {
     .advice-container {
         max-width: 45%;
