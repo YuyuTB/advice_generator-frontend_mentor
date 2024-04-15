@@ -12,23 +12,16 @@ Users should be able to:
 
 ### Links
 
--   Solution URL: [Add solution URL here](https://your-solution-url.com)
--   Live Site URL: [Add live site URL here](https://your-live-site-url.com)
+-   Live Site URL: https://your-live-site-url.com
 
 ## My process
 
+I used Vue.js so I could practice using it, as well as practice using an API.
+I split the code into several components.
+
 ### Built with
 
--   Semantic HTML5 markup
--   CSS custom properties
--   Flexbox
--   CSS Grid
--   Mobile-first workflow
--   [React](https://reactjs.org/) - JS library
--   [Next.js](https://nextjs.org/) - React framework
--   [Styled Components](https://styled-components.com/) - For styles
-
-**Note: These are just examples. Delete this note and replace the list above with your own choices**
+-   Vue.js and Advice generator API
 
 ### What I learned
 
